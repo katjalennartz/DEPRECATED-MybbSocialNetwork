@@ -1,0 +1,126 @@
+Update: 20.01.17
+Änderungen Globale Templates:
+
+social_newsfeed.tpl
+Suche 
+		{$social_newsfeedpost}
+		<br>
+
+Füge darunter ein:
+		{$multipage}
+
+social_newsfeedant.tpl
+Suche
+	{$antautor}
+ersetze mit
+	{$ant_username}
+
+
+
+Update: 08.01.17
+1. Datenbankqueries ausführen
+
+Erstellen neuer felder in Tabellen: mybb_socialantwort & mybb_socialpost
+	del_nutzername
+	del_username
+	del_profilbild 
+	
+	ALTER TABLE mybb_socialantwort ADD del_nutzername varchar(30) NULL DEFAULT NULL;
+	ALTER TABLE mybb_socialantwort ADD del_username varchar(30) NULL DEFAULT NULL;
+	ALTER TABLE mybb_socialantwort ADD del_profilbild varchar(300) NULL DEFAULT NULL;
+	ALTER TABLE mybb_socialpost ADD del_nutzername varchar(30) NULL DEFAULT NULL;
+	ALTER TABLE mybb_socialpost ADD del_username varchar(30) NULL DEFAULT NULL;
+	ALTER TABLE mybb_socialpost ADD del_profilbild varchar(300) NULL DEFAULT NULL
+	
+
+
+Querie ausführen um Spalten werte für vorhandene posts zu übernehmen ACHTUNG ggf Präfix anpassen!:
+
+	UPDATE mybb_socialantwort as a INNER JOIN mybb_users as u ON a.social_uid = u.uid SET a.del_nutzername = u.social_nutzername, a.del_username = u.username;
+	UPDATE mybb_socialpost as p INNER JOIN mybb_users as u ON p.uid = u.uid SET p.del_nutzername = u.social_nutzername, p.del_username = u.username;
+	
+
+Optional: Querie für schon gelöschten User ausführen - wenn gewünscht:
+X1 = Wert für nutzername
+X2 = Wert für username
+X3 = uid des gelöschten Users
+
+	UPDATE mybb_socialantwort SET del_nutzername = 'X1', del_username = 'X2' WHERE social_uid = 'X3';
+	UPDATE mybb_socialpost SET del_nutzername = 'X1', del_username = 'X2' WHERE uid = 'X3'
+
+
+2. Plugin dateien ersetzen
+inc/plugins/userpages.php
+newsfeed.php
+
+
+Änderungen templates:
+social_post.tpl
+	<a href="member.php?action=profile&uid={$postautorid}&area=userpage">{$username}</a>
+ersetzen mit
+	{$username}
+
+social_antwort.tpl
+	<a href="member.php?action=profile&uid={$antautor}&area=userpage"> {$ant_username}</a>
+ersetzen mit:
+	{$antautor}
+
+social_newsfeedant.tpl
+	<a href="member.php?action=profile&uid={$antautor}&area=userpage">{$ant_username}</a>
+ersetzen mit 
+	{$antautor}
+
+social_newsfeedpost.tpl
+	<a href="member.php?action=profile&uid={$userpageid}&area=userpage">{$username}</a>
+ersetzen mit
+	{$username}
+	
+globale Templates hinzufügen:
+
+social_userlist.tpl
+	
+	<html>
+	<head>
+		<title>{$mybb->settings['bbname']} - Social Network Nutzer</title>
+		{$headerinclude}
+		<link type="text/css" rel="stylesheet" href="social.css" />
+	</head>
+	<body>
+		{$header}
+
+		<table border="0" cellspacing="{$theme['borderwidth']}" cellpadding="{$theme['tablespace']}" class="tborder">
+			<thead>
+				<tr>
+					<td class="thead"><strong>Social Network Nutzer</strong></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="tcat" align ="center" valign="middle">
+						{$row_user}
+					</td>
+				</tr>
+				<tr>
+
+			</td>
+			</tr>
+			</tbody>
+		</table>
+		{$footer}
+	</body>
+</html>
+
+
+
+socialnutzer_row.tpl
+	<table width="70%">
+	<tr>
+		<td  align="left" width="90px"><img src="{$avatar}" width="70px"/> </td>
+		<td><a href="{$profilelink}">{$username}</a><br>
+			{$userpagelink}  </td>
+	</tr>
+	</table>
+
+
+
+

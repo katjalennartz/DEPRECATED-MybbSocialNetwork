@@ -1,0 +1,328 @@
+/* newsfeed */
+.nf_divaussen {
+	width:95%; 
+	border: 0px solid #000000;
+	background-color: #dbdddf;
+	border-radius: 10px 10px 10px 10px;
+	color: #000000;
+}
+
+.nf_divaussen a, .nf_divaussen td{
+	color: #000000;
+}
+
+.table_nfposts{
+	width:85%;
+	background-color:#b1b1b1;
+	border-radius: 10px 10px 10px 10px;
+	color: #000000;
+}
+
+.table_nfposts img {
+	max-width:450px;
+}
+
+.td_nfpostava{
+	width:80px;
+	padding:3px;
+}
+
+.td_nfpost {
+	color: #000000;
+}
+
+.table_nfpostwrap {
+	width:100%;
+}
+
+
+.table_nfantwort{
+	width:100%;
+	background-color: #dbdddf;
+	border-radius: 10px 10px 10px 10px;	
+	color: #000000;
+}
+
+.nf_date input, .nf_time input {
+	background-color:#b1b1b1;
+	border-radius:4px;
+	border:0px;
+	padding:2px;
+	text-align:center;
+	color: #000000;
+}
+
+.nf_datetimeabstand {
+margin-left:10px;
+}
+
+.nf_textarea {
+	background-color:#b1b1b1;
+	border-radius:4px;
+	border:0px;
+	text-align:left;
+	width:90%;
+	color: #000000;
+}
+
+
+.table_nfantwortwrap {
+	width:100%;
+		color: #000000;
+}
+
+.nf_antwortgesamt {
+	width:100%;
+		color: #000000;
+}
+
+.nf_tdantwortava {
+	width: 50px;
+}
+ 
+
+/*Userpagepost style */
+/*user in userpage_content template*/
+.social_rahmen_ganzaussen {
+	margin: auto auto;
+	width: 800px;
+	background-color: #dbdddf;
+	border-radius: 10px 10px 10px 10px;
+	color:#000000;
+}
+
+.social_rahmen_aussen {
+	width: 98%;
+	background-color: #dbdddf;
+	border-radius: 10px 10px 10px 10px;
+	color:#000000;
+}
+
+.social_rahmen_aussen a, .social_rahmen_aussen td{
+	color: #000000;
+}
+
+.social_titelbild{
+	width:100%;
+	border:0px #b1b1b1 solid;
+	background-repeat: no-repeat !important;
+	background-position: center 20px !important;
+}
+
+.social_tabellepostrahmentd img{
+max-width:420px;
+}
+
+.social_profilbild {
+	background-color:#b1b1b1;
+	width:150px;
+	height:150px;
+	padding:5px;
+	margin-left:70px;
+	margin-top:80px;
+	float:left;
+}
+
+.social_name {
+	font-size:20px;
+	font-weight: bold;
+	margin-left:6px;
+	float: left;
+	margin-top:217px;
+}
+
+.social_friendinfobox{
+	float:left;
+	position:relative;
+	width:210px;
+	margin-left:20px;
+	margin-bottom:5px;
+	text-align: left;
+}
+
+.social_infobox {
+	background-color:#b1b1b1;
+	padding:10px;
+}
+
+.social_tabellefriendpost{
+width:98%;
+}
+
+.social_friendrow{
+	width:240px;
+}
+
+.social_friendstuff {
+	width: 240px;
+	padding-left:20px;
+}
+
+/*social_post template */
+
+.social_posttabelle {
+	width:100%;
+}
+
+.social_tabellepostrahmen {
+	background-color:#b1b1b1;
+	border-radius:10px;
+	width:100%;
+}
+
+
+.social_text_button {
+   border: none;
+   background-color: transparent;
+   padding: 0;
+   text-decoration: underline; /* if desired */
+   color: #000000;  /* or whatever other color you want */
+	cursor: pointer;
+}
+
+/*social post und social like */ 
+/*buttons fürs senden und zurücknehmen vom like*/
+.like {
+   border: none;
+   background-color: transparent;
+	/*grafik like*/
+	background-image:url(social/like.png);
+	background-position:0;
+	background-repeat: no-repeat;
+	height: 20px;
+   padding-left: 19px;
+   text-decoration: underline; /* if desired */
+   color: #000000;  /* or whatever other color you want */
+	cursor: pointer;
+}
+.dislike {
+   border: none;
+   background-color: transparent;
+	/*grafik dislike*/
+	background-image:url(social/dislike.png);
+	background-position:0;
+	background-repeat: no-repeat;
+	height: 20px;
+   padding-left: 19px;
+   text-decoration: underline; /* if desired */
+   color: #000000;  /* or whatever other color you want */
+	cursor: pointer;
+}
+
+.tdlike {
+	margin-top:-20px;
+}
+
+.hr_nf {
+color: #000000 !important;
+background-color: #000000 !important;
+}
+
+/*mouseover für usernamen d. liker */
+tooltip.userlike {
+  position: relative; 
+  text-decoration: none; 
+  color: black; 
+  border: 0px solid black;
+	font-size:10px;
+}
+showuser{
+	display: none;
+	width:150px;
+	height:30px;	
+	overflow:auto;
+	text-align: left;
+}
+
+donthidebox{
+	display: none;
+	width:150px;
+	height:30px;	
+	overflow:auto;
+	text-align: left;
+}
+
+
+tooltip.userlike:hover {
+  border: 0px dotted blue;
+ }
+
+tooltip.userlike:hover donthidebox {
+   display: block;
+   position: absolute; 
+   padding: 5px; 
+   z-index: 200;
+  margin-top:-3px;
+  right:0px;
+   border: 1px solid #ffffff;
+   background-color: #b8bdc0;
+    color: #000000;
+	font-family: Verdana, Arial, Sans-Serif;
+	font-size: 11px;
+  }
+
+tooltip.userlike:hover hidebox {
+	display: hidden;
+}
+
+
+.social_tabellepostrahmentd {
+	width: 98%;
+	background-color:#b1b1b1;
+}
+
+/*td hinter profilbild beim post*/ 
+.social_post_td_profilbild {
+	width: 80px !important;
+	background-color:#b1b1b1;
+	font-size:10px;
+}
+.social_usernametd {
+	height: 10px;
+}
+
+
+.social_anttabellerahmen{
+	width:100%;
+	background-color:#dbdddf;
+}
+
+
+.social_poststatus {
+	position:relative;
+	left: 10px;
+}
+
+.social_poststatustab input{
+	border: 0;
+	border-radius: 3px;
+	padding:2px;
+}
+
+.social_poststatustab{
+	width:98%;
+}
+
+.social_socialpostinput {
+	background-color:#ffffff;
+	width:300px;
+	color: #000000;
+}
+
+.social_socialostantwort {
+	background-color:#ffffff;
+	width:297px;
+	color:#000000;
+}
+
+.social_antsetzen{
+	width: 300px;
+	background-color:#dbdddf;
+}
+
+.social_antsetzen input{
+	border: 0;
+	border-radius: 3px;
+	padding:2px;
+}
+
