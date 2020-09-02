@@ -1387,9 +1387,6 @@ function userpages_main()
 	$lang->load('userpages');
 	$usergroups_cache = $cache->read("usergroups");
 	
-	//von wem ist das Profil?
-	$memprofile = $db->fetch_array($db->simple_select("users", "userpage, username, uid, social_nutzername", "uid = ".intval($mybb->input['uid'])), "userpage");
-	
 	//hat der user einen eigenen Nutzernamen gewählt? Sonst - Username
 	if ($memprofile['social_nutzername'] !== "") {
 		$nutzername = htmlspecialchars_uni($memprofile['social_nutzername']);
