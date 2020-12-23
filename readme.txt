@@ -1,4 +1,10 @@
- Orginalplugin: 
+###'ACHTUNG #####
+funktioniert ab mybb version 1.8.24 nicht mehr.
+-> Bitte Social Network 2.0 nutzen :) 
+https://github.com/katjalennartz/socialnetwork_2.0
+
+
+Orginalplugin: 
 Userpages for MyBB
 Erstellt von euantor / Codicious
 
